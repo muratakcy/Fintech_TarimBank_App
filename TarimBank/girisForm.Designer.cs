@@ -35,12 +35,14 @@ namespace TarimBank
             this.kAd1Txt = new System.Windows.Forms.TextBox();
             this.btnKayit = new System.Windows.Forms.Button();
             this.btnGiris = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 82);
+            this.label2.Location = new System.Drawing.Point(92, 196);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 58;
@@ -49,7 +51,7 @@ namespace TarimBank
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 42);
+            this.label1.Location = new System.Drawing.Point(45, 156);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 17);
             this.label1.TabIndex = 57;
@@ -57,7 +59,7 @@ namespace TarimBank
             // 
             // sifre1Txt
             // 
-            this.sifre1Txt.Location = new System.Drawing.Point(139, 79);
+            this.sifre1Txt.Location = new System.Drawing.Point(143, 193);
             this.sifre1Txt.Name = "sifre1Txt";
             this.sifre1Txt.PasswordChar = '*';
             this.sifre1Txt.Size = new System.Drawing.Size(156, 22);
@@ -65,14 +67,14 @@ namespace TarimBank
             // 
             // kAd1Txt
             // 
-            this.kAd1Txt.Location = new System.Drawing.Point(139, 39);
+            this.kAd1Txt.Location = new System.Drawing.Point(143, 153);
             this.kAd1Txt.Name = "kAd1Txt";
             this.kAd1Txt.Size = new System.Drawing.Size(156, 22);
             this.kAd1Txt.TabIndex = 55;
             // 
             // btnKayit
             // 
-            this.btnKayit.Location = new System.Drawing.Point(220, 118);
+            this.btnKayit.Location = new System.Drawing.Point(224, 232);
             this.btnKayit.Name = "btnKayit";
             this.btnKayit.Size = new System.Drawing.Size(75, 25);
             this.btnKayit.TabIndex = 54;
@@ -82,7 +84,7 @@ namespace TarimBank
             // 
             // btnGiris
             // 
-            this.btnGiris.Location = new System.Drawing.Point(139, 118);
+            this.btnGiris.Location = new System.Drawing.Point(143, 232);
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(75, 25);
             this.btnGiris.TabIndex = 53;
@@ -90,11 +92,22 @@ namespace TarimBank
             this.btnGiris.UseVisualStyleBackColor = true;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TarimBank.Properties.Resources.login;
+            this.pictureBox1.Location = new System.Drawing.Point(106, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(143, 109);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabStop = false;
+            // 
             // girisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 192);
+            this.ClientSize = new System.Drawing.Size(350, 339);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sifre1Txt);
@@ -105,6 +118,7 @@ namespace TarimBank
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giriş";
             this.Load += new System.EventHandler(this.girisForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,6 +132,7 @@ namespace TarimBank
         private System.Windows.Forms.TextBox kAd1Txt;
         private System.Windows.Forms.Button btnKayit;
         private System.Windows.Forms.Button btnGiris;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

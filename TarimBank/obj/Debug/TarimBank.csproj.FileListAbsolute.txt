@@ -12,3 +12,4 @@ C:\Users\murat\Desktop\projeYy\TarimBank\obj\Debug\TarimBank.girisForm.resources
 C:\Users\murat\Desktop\projeYy\TarimBank\obj\Debug\TarimBank.kayitForm.resources
 C:\Users\murat\Desktop\projeYy\TarimBank\obj\Debug\TarimBank.kullaniciForm.resources
 C:\Users\murat\Desktop\projeYy\TarimBank\bin\Debug\tarimBank.accdb
+C:\Users\murat\Desktop\projeYy\TarimBank\obj\Debug\TarimBank.alimSatimForm.resources

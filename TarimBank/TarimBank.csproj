@@ -51,6 +51,12 @@
     <Compile Include="adminForm.Designer.cs">
       <DependentUpon>adminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="alimSatimForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="alimSatimForm.Designer.cs">
+      <DependentUpon>alimSatimForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="girisForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <EmbeddedResource Include="adminForm.resx">
       <DependentUpon>adminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="alimSatimForm.resx">
+      <DependentUpon>alimSatimForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="girisForm.resx">
       <DependentUpon>girisForm.cs</DependentUpon>
@@ -127,6 +136,7 @@
     <None Include="Resources\havuc.png" />
     <None Include="Resources\lemon.png" />
     <None Include="Resources\misir.png" />
+    <None Include="Resources\login.png" />
     <Content Include="tarimBank.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -18,16 +18,16 @@ namespace TarimBank
             InitializeComponent();
         }
         OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=tarimBank.accdb");
-
+        Boolean urunIslemNoKontrol,bakiyeIslemNoKontrol;
         //Kullanıcıların ürün ekleme talepleri listelenir.
         public void urunIstekGoster()
         {
             urunListView.Items.Clear();
-            OleDbCommand komut = new OleDbCommand("select * from Onay where onayDurum="+0+"", baglanti);
+            OleDbCommand komut = new OleDbCommand("select * from Onay", baglanti);
             baglanti.Open();
             OleDbDataReader oku = komut.ExecuteReader();
             while (oku.Read())
-            {
+            { 
                 if (oku["urunMiktar"].ToString() != "0")
                 {
                     ListViewItem ekle = new ListViewItem();
@@ -37,19 +37,19 @@ namespace TarimBank
                     ekle.SubItems.Add(oku["urunMiktar"].ToString());
                     urunListView.Items.Add(ekle);
                 }
-
             }
             baglanti.Close();
         }
         //Kullanıcıların bakiye yükleme talepleri listelenir.
         public void bakiyeIstekGoster(){
+            double bakiyeKontrol = 0;
             bakiyeListView.Items.Clear();
-            OleDbCommand komut = new OleDbCommand("select * from Onay where onayDurum=" + 0 + "", baglanti);
+            OleDbCommand komut = new OleDbCommand("select * from Onay", baglanti);
             baglanti.Open();
             OleDbDataReader oku = komut.ExecuteReader();
             while (oku.Read())
             {
-                if (oku["yuklenenBakiye"].ToString() != "0")
+                if (Convert.ToDouble(oku["yuklenenBakiye"]) != bakiyeKontrol)
                 {
                     ListViewItem ekle = new ListViewItem();
                     ekle.Text = oku["islemNo"].ToString();
@@ -60,94 +60,155 @@ namespace TarimBank
             }
             baglanti.Close();
         }
-        //Onaylanacak ürünün onay durumu güncellenir.
+        //Onaylanan ürün yükleme talebi,tablodan silinir
         public void urunOnay()
         {
-            OleDbCommand komut = new OleDbCommand("update Onay set onayDurum="+1+" where islemNo=" + Convert.ToInt32(urnOnyTxt.Text) + "", baglanti);
+            OleDbCommand komut = new OleDbCommand("delete from Onay where islemNo=" + Convert.ToInt32(urnOnyTxt.Text) + "", baglanti);
             baglanti.Open();
             komut.ExecuteNonQuery();
             baglanti.Close();
         }
-        //Onaylanacak bakiyenin onay durumu güncellenir.
+        //Onaylanan bakiye yükleme talebi,tablodan silinir
         public void bakiyeOnay()
         {
-            OleDbCommand komut = new OleDbCommand("update Onay set onayDurum=" + 1 + " where islemNo=" + Convert.ToInt32(bkyOnyTxt.Text) + "", baglanti);
+            OleDbCommand komut = new OleDbCommand("delete from Onay where islemNo=" + Convert.ToInt32(bkyOnyTxt.Text) + "", baglanti);
             baglanti.Open();
             komut.ExecuteNonQuery();
             baglanti.Close();
         }
 
         //Kullanıcının onaylanan ürünü , ürün bakiyesine eklenmektedir.  
-        public void urunAktar()
+        public Boolean urunAktar()
         {
             string kAd;
             int miktar = 0;
-            OleDbCommand komut = new OleDbCommand("select * from Onay where islemNo=" + Convert.ToInt32(urnOnyTxt.Text) + "", baglanti);           
+            OleDbCommand komut = new OleDbCommand("select * from Onay where islemNo=" + Convert.ToInt32(urnOnyTxt.Text) + "and yuklenenBakiye="+0+"", baglanti);           
             baglanti.Open();
             OleDbDataReader oku = komut.ExecuteReader();
             if(oku.Read())
             {
+                urunIslemNoKontrol = true;
                 kAd = oku["kAd"].ToString() ;
                 miktar = Convert.ToInt32(oku["urunMiktar"]);
 
                 if (oku["urunAd"].ToString() == "Havuç") { 
-                    OleDbCommand komut3 = new OleDbCommand("update Kullanicilar set havuc=havuc+"+miktar+" where kAd='"+kAd+"' ", baglanti);
-                    komut3.ExecuteNonQuery();
+                    OleDbCommand komut2 = new OleDbCommand("update Kullanicilar set havuc=havuc+"+miktar+" where kAd='"+kAd+"' ", baglanti);
+                    komut2.ExecuteNonQuery();
                 }
                 else if (oku["urunAd"].ToString() == "Çilek")
                 {
-                    OleDbCommand komut4 = new OleDbCommand("update Kullanicilar set cilek=cilek+" +miktar + " where kAd='" + kAd + "' ", baglanti);
-                    komut4.ExecuteNonQuery();
+                    OleDbCommand komut3 = new OleDbCommand("update Kullanicilar set cilek=cilek+" +miktar + " where kAd='" + kAd + "' ", baglanti);
+                    komut3.ExecuteNonQuery();
                 }
                 else if (oku["urunAd"].ToString() == "Limon")
                 {
-                    OleDbCommand komut5 = new OleDbCommand("update Kullanicilar set limon=limon+" + miktar + " where kAd='" + kAd + "' ", baglanti);
-                    komut5.ExecuteNonQuery();
+                    OleDbCommand komut4 = new OleDbCommand("update Kullanicilar set limon=limon+" + miktar + " where kAd='" + kAd + "' ", baglanti);
+                    komut4.ExecuteNonQuery();
                 }
                 else
                 {
-                    OleDbCommand komut6 = new OleDbCommand("update Kullanicilar set misir=misir+" + miktar + " where kAd='" + kAd + "' ", baglanti);
-                    komut6.ExecuteNonQuery();
+                    OleDbCommand komut5 = new OleDbCommand("update Kullanicilar set misir=misir+" + miktar + " where kAd='" + kAd + "' ", baglanti);
+                    komut5.ExecuteNonQuery();
                 }
             }
             baglanti.Close();
-            MessageBox.Show("İşlem Onaylandı");
-            
+            return urunIslemNoKontrol;
+
+
         }
         //Kullanıcının onaylanan bakiyesi , Tl bakiyesine eklenmektedir.  
-        public void bakiyeAktar()
+        public Boolean bakiyeAktar()
         {
             string kAd;
-            int bakiye = 0;
-            OleDbCommand komut = new OleDbCommand("select * from Onay where islemNo=" + Convert.ToInt32(bkyOnyTxt.Text) + "", baglanti);
+            double bakiye = 0;
+            OleDbCommand komut = new OleDbCommand("select * from Onay where islemNo=" + Convert.ToInt32(bkyOnyTxt.Text) + "and urunMiktar=" + 0 + "", baglanti);
             baglanti.Open();
             OleDbDataReader oku = komut.ExecuteReader();
             if (oku.Read())
             {
+                bakiyeIslemNoKontrol = true;
                 kAd = oku["kAd"].ToString();
-                bakiye = Convert.ToInt32(oku["yuklenenBakiye"]);
+                bakiye = Convert.ToDouble(oku["yuklenenBakiye"]);
                 OleDbCommand komut2 = new OleDbCommand("update Kullanicilar set bakiye=bakiye+" + bakiye + " where kAd='" + kAd + "' ", baglanti);
                 komut2.ExecuteNonQuery();
             }
             baglanti.Close();
-            MessageBox.Show("İşlem Onaylandı");
+            return bakiyeIslemNoKontrol;
         }
         private void adminForm_Load(object sender, EventArgs e)
         {
             urunIstekGoster();
             bakiyeIstekGoster();
         }
+        //Ürün onay butonuna basıldığında gerekli kontroller gerçekleştirilip fonksiyonlar çağırılır.
         private void btnUrnOnay_Click(object sender, EventArgs e)
         {
-            urunOnay();
-            urunAktar();
-            urunIstekGoster();
+            if (urnOnyTxt.Text=="")
+            {
+                MessageBox.Show("Lütfen bir talep numarası girdiğinizden emin olunuz");
+            }
+            else if(urunAktar()== false)
+            {
+                MessageBox.Show("Ürün ekleme talebi bulunamadı");
+            }
+            else
+            {
+                urunOnay();
+                urunIslemNoKontrol =false;
+                urunIstekGoster();
+                MessageBox.Show("İşlem Onaylandı");
+            }
         }
+        //Bakiye onay butonuna basıldığında gerekli kontroller gerçekleştirilip fonksiyonlar çağırılır.
         private void btnBkyOnay_Click(object sender, EventArgs e)
         {
-            bakiyeOnay();
-            bakiyeAktar();
-            bakiyeIstekGoster();
+            if (bkyOnyTxt.Text == "")
+            {
+                MessageBox.Show("Lütfen bir talep numarası girdiğinizden emin olunuz");
+            }
+            else if (bakiyeAktar() == false)
+            {
+                MessageBox.Show("Bakiye yükleme talebi bulunamadı");
+            }
+            else
+            {
+                bakiyeOnay();
+                bakiyeIslemNoKontrol = false;
+                bakiyeIstekGoster();
+                MessageBox.Show("İşlem Onaylandı");
+            }
+        }
+        //Textboxlara ilişkin string veri tipi kontrolü yapılmaktadır.
+        private void urnOnyTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                MessageBox.Show("Lütfen sayısal veri giriniz");
+                e.Handled = true;
+            }
+        }
+        private void bkyOnyTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                MessageBox.Show("Lütfen sayısal veri giriniz");
+                e.Handled = true;
+            }
+        }
+        //Çıkış işlemleri
+        private void btnCikis_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = new DialogResult();
+            dialog = MessageBox.Show("Çıkış yapmak istediğinize eminmisiniz?", "ÇIKIŞ", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                this.Close();
+                Application.Exit();
+            }
+            else
+            {
+                MessageBox.Show("İşlemlerinize devam edebilirsiniz !!");
+            }
         }
     }
 }

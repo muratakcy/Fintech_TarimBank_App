@@ -46,6 +46,7 @@ namespace TarimBank
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnCikis = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +58,7 @@ namespace TarimBank
             this.groupBox1.Controls.Add(this.btnBkyOnay);
             this.groupBox1.Controls.Add(this.bkyOnyTxt);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox1.Location = new System.Drawing.Point(596, 12);
+            this.groupBox1.Location = new System.Drawing.Point(596, 57);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(554, 294);
             this.groupBox1.TabIndex = 0;
@@ -118,6 +119,7 @@ namespace TarimBank
             this.bkyOnyTxt.Name = "bkyOnyTxt";
             this.bkyOnyTxt.Size = new System.Drawing.Size(111, 23);
             this.bkyOnyTxt.TabIndex = 3;
+            this.bkyOnyTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bkyOnyTxt_KeyPress);
             // 
             // groupBox2
             // 
@@ -126,7 +128,7 @@ namespace TarimBank
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.urunListView);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(12, 57);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(554, 294);
             this.groupBox2.TabIndex = 1;
@@ -149,6 +151,7 @@ namespace TarimBank
             this.urnOnyTxt.Name = "urnOnyTxt";
             this.urnOnyTxt.Size = new System.Drawing.Size(111, 23);
             this.urnOnyTxt.TabIndex = 2;
+            this.urnOnyTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.urnOnyTxt_KeyPress);
             // 
             // label1
             // 
@@ -194,11 +197,22 @@ namespace TarimBank
             this.columnHeader10.Text = "Ürün Miktarı";
             this.columnHeader10.Width = 84;
             // 
+            // btnCikis
+            // 
+            this.btnCikis.Location = new System.Drawing.Point(930, 364);
+            this.btnCikis.Name = "btnCikis";
+            this.btnCikis.Size = new System.Drawing.Size(220, 29);
+            this.btnCikis.TabIndex = 11;
+            this.btnCikis.Text = "Çıkış Yap";
+            this.btnCikis.UseVisualStyleBackColor = true;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
+            // 
             // adminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 690);
+            this.ClientSize = new System.Drawing.Size(1162, 442);
+            this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "adminForm";
@@ -232,5 +246,6 @@ namespace TarimBank
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.Button btnCikis;
     }
 }

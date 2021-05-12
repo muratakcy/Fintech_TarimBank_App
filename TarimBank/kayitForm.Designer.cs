@@ -122,9 +122,11 @@ namespace TarimBank
             // tcTxt
             // 
             this.tcTxt.Location = new System.Drawing.Point(166, 163);
+            this.tcTxt.MaxLength = 11;
             this.tcTxt.Name = "tcTxt";
             this.tcTxt.Size = new System.Drawing.Size(133, 22);
             this.tcTxt.TabIndex = 81;
+            this.tcTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tcTxt_KeyPress);
             // 
             // adSoyadTxt
             // 
@@ -157,9 +159,11 @@ namespace TarimBank
             // telTxt
             // 
             this.telTxt.Location = new System.Drawing.Point(166, 200);
+            this.telTxt.MaxLength = 11;
             this.telTxt.Name = "telTxt";
             this.telTxt.Size = new System.Drawing.Size(133, 22);
             this.telTxt.TabIndex = 76;
+            this.telTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telTxt_KeyPress);
             // 
             // e_mailTxt
             // 
