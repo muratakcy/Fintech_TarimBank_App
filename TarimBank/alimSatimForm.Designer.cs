@@ -29,6 +29,7 @@ namespace TarimBank
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(alimSatimForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.fytTxt = new System.Windows.Forms.TextBox();
             this.btnSat = new System.Windows.Forms.Button();
@@ -241,6 +242,7 @@ namespace TarimBank
             this.ClientSize = new System.Drawing.Size(777, 286);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "alimSatimForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alım-Satım İşlemleri";

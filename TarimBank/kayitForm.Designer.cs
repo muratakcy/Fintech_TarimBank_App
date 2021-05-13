@@ -29,6 +29,7 @@ namespace TarimBank
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(kayitForm));
             this.btnKayit = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -206,6 +207,7 @@ namespace TarimBank
             this.Controls.Add(this.adresTxt);
             this.Controls.Add(this.telTxt);
             this.Controls.Add(this.e_mailTxt);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "kayitForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kayıt";

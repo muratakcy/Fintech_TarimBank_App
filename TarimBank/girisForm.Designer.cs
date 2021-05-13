@@ -29,6 +29,7 @@ namespace TarimBank
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(girisForm));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.sifre1Txt = new System.Windows.Forms.TextBox();
@@ -129,6 +130,7 @@ namespace TarimBank
             this.Controls.Add(this.kAd1Txt);
             this.Controls.Add(this.btnKayit);
             this.Controls.Add(this.btnGiris);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "girisForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giriş";
