@@ -23,8 +23,10 @@ namespace TarimBank
         double bakiye = 0;
 
         OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=tarimBank.accdb");
+        //urun adları comboboxa eklenir.
         public void urunComboDoldur()
         {
+            comboBox1.Items.Clear();
             string[] urunler = { "Çilek", "Limon", "Mısır", "Havuç" };
             comboBox1.Items.AddRange(urunler);
 
@@ -48,6 +50,20 @@ namespace TarimBank
             }
             baglanti.Close();
 
+        }
+        //Veri tabanından kullanıcı bakiyesi ve adı verileri çekilerek ekranda gösterilir.
+        public void bakiyeUrunGoster()
+        {
+            OleDbCommand komut = new OleDbCommand("select * from Kullanicilar where kAd='" + kAdTut + "'", baglanti);
+            baglanti.Open();
+            OleDbDataReader oku = komut.ExecuteReader();
+            if (oku.Read())
+            {
+                bakiye = Convert.ToDouble(oku["bakiye"]);
+            }
+            baglanti.Close();
+            bkyLabel.Text = bakiye.ToString() + " TL";
+            adLbl.Text = adTut.ToUpper();
         }
         //Ürün ekleme talebi sisteme iletiliyor.
         public void urunEkle()
@@ -96,6 +112,7 @@ namespace TarimBank
             }
             
         }
+        //Picturebox'a ilgili ürün resmi getirilmektedir.
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0) {
@@ -106,22 +123,14 @@ namespace TarimBank
             else { pictureBox1.Image = Resources.havuc; }
 
         }
+        //Form yüklenirken fonksiyonlar çağırılarak gerekli veriler veritabanından alınır.
         private void kullaniciForm_Load(object sender, EventArgs e)
         {
-            
             urunComboDoldur();
             urunListele();
-            OleDbCommand komut = new OleDbCommand("select * from Kullanicilar where kAd='" + kAdTut + "'", baglanti);
-            baglanti.Open();
-            OleDbDataReader oku = komut.ExecuteReader();
-            if(oku.Read())
-            {
-                bakiye = Convert.ToDouble(oku["bakiye"]); 
-            }
-            baglanti.Close();
-            bkyLabel.Text=bakiye.ToString()+" TL";
-            adLbl.Text = adTut.ToUpper();
+            bakiyeUrunGoster();
         }
+        //Bu buton ile Alım-Satım işlemleri formuna geçilir
         private void button1_Click(object sender, EventArgs e)
         {   
             alimSatimForm alimSatim = new alimSatimForm();
@@ -160,6 +169,13 @@ namespace TarimBank
             {
                 MessageBox.Show("İşlemlerinize devam edebilirsiniz !!");
             }
+        }
+        /*Yenile butonu ile urunListele() ve bakiyeUrunGoster() fonksiyonları tekrar çağırılarak
+        güncel bakiye ve ürün durumu kullanıcıya gösterilmektedir.*/
+        private void btnYenile_Click(object sender, EventArgs e)
+        { 
+            urunListele();
+            bakiyeUrunGoster();
         }
     }
 }

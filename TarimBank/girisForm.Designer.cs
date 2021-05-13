@@ -42,7 +42,8 @@ namespace TarimBank
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(92, 196);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(61, 249);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 58;
@@ -51,7 +52,8 @@ namespace TarimBank
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 156);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(61, 209);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 17);
             this.label1.TabIndex = 57;
@@ -59,7 +61,7 @@ namespace TarimBank
             // 
             // sifre1Txt
             // 
-            this.sifre1Txt.Location = new System.Drawing.Point(143, 193);
+            this.sifre1Txt.Location = new System.Drawing.Point(159, 246);
             this.sifre1Txt.Name = "sifre1Txt";
             this.sifre1Txt.PasswordChar = '*';
             this.sifre1Txt.Size = new System.Drawing.Size(156, 22);
@@ -67,37 +69,48 @@ namespace TarimBank
             // 
             // kAd1Txt
             // 
-            this.kAd1Txt.Location = new System.Drawing.Point(143, 153);
+            this.kAd1Txt.Location = new System.Drawing.Point(159, 206);
             this.kAd1Txt.Name = "kAd1Txt";
             this.kAd1Txt.Size = new System.Drawing.Size(156, 22);
             this.kAd1Txt.TabIndex = 55;
             // 
             // btnKayit
             // 
-            this.btnKayit.Location = new System.Drawing.Point(224, 232);
+            this.btnKayit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnKayit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnKayit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKayit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKayit.ForeColor = System.Drawing.Color.White;
+            this.btnKayit.Location = new System.Drawing.Point(238, 274);
             this.btnKayit.Name = "btnKayit";
-            this.btnKayit.Size = new System.Drawing.Size(75, 25);
+            this.btnKayit.Size = new System.Drawing.Size(77, 35);
             this.btnKayit.TabIndex = 54;
-            this.btnKayit.Text = "Kayıt Ol";
-            this.btnKayit.UseVisualStyleBackColor = true;
+            this.btnKayit.Text = "Kayıt";
+            this.btnKayit.UseVisualStyleBackColor = false;
             this.btnKayit.Click += new System.EventHandler(this.btnKayit_Click);
             // 
             // btnGiris
             // 
-            this.btnGiris.Location = new System.Drawing.Point(143, 232);
+            this.btnGiris.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnGiris.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnGiris.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGiris.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGiris.ForeColor = System.Drawing.Color.White;
+            this.btnGiris.Location = new System.Drawing.Point(159, 274);
             this.btnGiris.Name = "btnGiris";
-            this.btnGiris.Size = new System.Drawing.Size(75, 25);
+            this.btnGiris.Size = new System.Drawing.Size(73, 35);
             this.btnGiris.TabIndex = 53;
             this.btnGiris.Text = "Giriş";
-            this.btnGiris.UseVisualStyleBackColor = true;
+            this.btnGiris.UseVisualStyleBackColor = false;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::TarimBank.Properties.Resources.login;
-            this.pictureBox1.Location = new System.Drawing.Point(106, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(64, 79);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 109);
+            this.pictureBox1.Size = new System.Drawing.Size(251, 109);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 59;
             this.pictureBox1.TabStop = false;
@@ -106,7 +119,9 @@ namespace TarimBank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 339);
+            this.BackgroundImage = global::TarimBank.Properties.Resources.bg3;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(379, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

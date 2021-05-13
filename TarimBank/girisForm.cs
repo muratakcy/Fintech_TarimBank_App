@@ -60,7 +60,6 @@ namespace TarimBank
                 giris();
             }
         }
-
         private void girisForm_Load(object sender, EventArgs e)
         {
             baglanti.Open();

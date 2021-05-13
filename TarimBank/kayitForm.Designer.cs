@@ -48,17 +48,23 @@ namespace TarimBank
             // 
             // btnKayit
             // 
+            this.btnKayit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnKayit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnKayit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKayit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKayit.ForeColor = System.Drawing.Color.White;
             this.btnKayit.Location = new System.Drawing.Point(223, 306);
             this.btnKayit.Name = "btnKayit";
-            this.btnKayit.Size = new System.Drawing.Size(76, 26);
+            this.btnKayit.Size = new System.Drawing.Size(77, 35);
             this.btnKayit.TabIndex = 89;
             this.btnKayit.Text = "Kayıt";
-            this.btnKayit.UseVisualStyleBackColor = true;
+            this.btnKayit.UseVisualStyleBackColor = false;
             this.btnKayit.Click += new System.EventHandler(this.btnKayit_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Location = new System.Drawing.Point(115, 85);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 17);
@@ -68,6 +74,7 @@ namespace TarimBank
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Location = new System.Drawing.Point(105, 241);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 17);
@@ -77,6 +84,7 @@ namespace TarimBank
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(107, 280);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 17);
@@ -86,6 +94,7 @@ namespace TarimBank
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(32, 203);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(128, 17);
@@ -95,6 +104,7 @@ namespace TarimBank
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(128, 166);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 17);
@@ -104,6 +114,7 @@ namespace TarimBank
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(83, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 17);
@@ -113,6 +124,7 @@ namespace TarimBank
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(68, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 17);
@@ -176,6 +188,8 @@ namespace TarimBank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TarimBank.Properties.Resources.bg3;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(379, 450);
             this.Controls.Add(this.btnKayit);
             this.Controls.Add(this.label9);
@@ -194,7 +208,7 @@ namespace TarimBank
             this.Controls.Add(this.e_mailTxt);
             this.Name = "kayitForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "kayitForm";
+            this.Text = "Kayıt";
             this.ResumeLayout(false);
             this.PerformLayout();
 

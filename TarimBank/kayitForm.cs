@@ -25,7 +25,6 @@ namespace TarimBank
             OleDbCommand komut = new OleDbCommand("insert into Kullanicilar(kAd,sifre,adSoyad,tc,tel,e_mail,adres)values('" + kAd2Txt.Text + "','" + sifre2Txt.Text + "','" + adSoyadTxt.Text + "','" + tcTxt.Text + "','" + telTxt.Text + "','" + e_mailTxt.Text + "','" + adresTxt.Text + "')", baglanti);
             komut.ExecuteNonQuery();
             baglanti.Close();
-            MessageBox.Show("Kaydınız tamamlandı");
             kAd2Txt.Text = "";
             sifre2Txt.Text = "";
             adSoyadTxt.Text = "";

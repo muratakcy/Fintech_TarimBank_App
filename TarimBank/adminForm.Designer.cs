@@ -53,11 +53,12 @@ namespace TarimBank
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.bakiyeListView);
             this.groupBox1.Controls.Add(this.btnBkyOnay);
             this.groupBox1.Controls.Add(this.bkyOnyTxt);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.Location = new System.Drawing.Point(596, 57);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(554, 294);
@@ -68,7 +69,8 @@ namespace TarimBank
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 220);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(5, 223);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 17);
             this.label2.TabIndex = 1;
@@ -80,8 +82,9 @@ namespace TarimBank
             this.columnHeader1,
             this.columnHeader4,
             this.columnHeader5});
+            this.bakiyeListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.bakiyeListView.HideSelection = false;
-            this.bakiyeListView.Location = new System.Drawing.Point(6, 22);
+            this.bakiyeListView.Location = new System.Drawing.Point(6, 25);
             this.bakiyeListView.Name = "bakiyeListView";
             this.bakiyeListView.Size = new System.Drawing.Size(542, 183);
             this.bakiyeListView.TabIndex = 0;
@@ -105,17 +108,23 @@ namespace TarimBank
             // 
             // btnBkyOnay
             // 
-            this.btnBkyOnay.Location = new System.Drawing.Point(286, 212);
+            this.btnBkyOnay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(190)))), ((int)(((byte)(84)))));
+            this.btnBkyOnay.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(190)))), ((int)(((byte)(84)))));
+            this.btnBkyOnay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBkyOnay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBkyOnay.ForeColor = System.Drawing.Color.White;
+            this.btnBkyOnay.Location = new System.Drawing.Point(286, 214);
             this.btnBkyOnay.Name = "btnBkyOnay";
-            this.btnBkyOnay.Size = new System.Drawing.Size(91, 32);
+            this.btnBkyOnay.Size = new System.Drawing.Size(101, 33);
             this.btnBkyOnay.TabIndex = 4;
             this.btnBkyOnay.Text = "Onayla";
-            this.btnBkyOnay.UseVisualStyleBackColor = true;
+            this.btnBkyOnay.UseVisualStyleBackColor = false;
             this.btnBkyOnay.Click += new System.EventHandler(this.btnBkyOnay_Click);
             // 
             // bkyOnyTxt
             // 
-            this.bkyOnyTxt.Location = new System.Drawing.Point(169, 217);
+            this.bkyOnyTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bkyOnyTxt.Location = new System.Drawing.Point(169, 220);
             this.bkyOnyTxt.Name = "bkyOnyTxt";
             this.bkyOnyTxt.Size = new System.Drawing.Size(111, 23);
             this.bkyOnyTxt.TabIndex = 3;
@@ -123,11 +132,12 @@ namespace TarimBank
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.btnUrnOnay);
             this.groupBox2.Controls.Add(this.urnOnyTxt);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.urunListView);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox2.Location = new System.Drawing.Point(12, 57);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(554, 294);
@@ -137,17 +147,23 @@ namespace TarimBank
             // 
             // btnUrnOnay
             // 
-            this.btnUrnOnay.Location = new System.Drawing.Point(287, 212);
+            this.btnUrnOnay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(190)))), ((int)(((byte)(84)))));
+            this.btnUrnOnay.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(190)))), ((int)(((byte)(84)))));
+            this.btnUrnOnay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUrnOnay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUrnOnay.ForeColor = System.Drawing.Color.White;
+            this.btnUrnOnay.Location = new System.Drawing.Point(287, 214);
             this.btnUrnOnay.Name = "btnUrnOnay";
-            this.btnUrnOnay.Size = new System.Drawing.Size(91, 32);
+            this.btnUrnOnay.Size = new System.Drawing.Size(101, 33);
             this.btnUrnOnay.TabIndex = 3;
             this.btnUrnOnay.Text = "Onayla";
-            this.btnUrnOnay.UseVisualStyleBackColor = true;
+            this.btnUrnOnay.UseVisualStyleBackColor = false;
             this.btnUrnOnay.Click += new System.EventHandler(this.btnUrnOnay_Click);
             // 
             // urnOnyTxt
             // 
-            this.urnOnyTxt.Location = new System.Drawing.Point(170, 216);
+            this.urnOnyTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.urnOnyTxt.Location = new System.Drawing.Point(170, 219);
             this.urnOnyTxt.Name = "urnOnyTxt";
             this.urnOnyTxt.Size = new System.Drawing.Size(111, 23);
             this.urnOnyTxt.TabIndex = 2;
@@ -156,7 +172,8 @@ namespace TarimBank
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 217);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(6, 220);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 17);
             this.label1.TabIndex = 1;
@@ -169,8 +186,9 @@ namespace TarimBank
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader10});
+            this.urunListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.urunListView.HideSelection = false;
-            this.urunListView.Location = new System.Drawing.Point(6, 22);
+            this.urunListView.Location = new System.Drawing.Point(6, 25);
             this.urunListView.Name = "urunListView";
             this.urunListView.Size = new System.Drawing.Size(542, 183);
             this.urunListView.TabIndex = 0;
@@ -199,18 +217,25 @@ namespace TarimBank
             // 
             // btnCikis
             // 
+            this.btnCikis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.btnCikis.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.btnCikis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCikis.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCikis.ForeColor = System.Drawing.Color.White;
             this.btnCikis.Location = new System.Drawing.Point(930, 364);
             this.btnCikis.Name = "btnCikis";
-            this.btnCikis.Size = new System.Drawing.Size(220, 29);
+            this.btnCikis.Size = new System.Drawing.Size(220, 34);
             this.btnCikis.TabIndex = 11;
             this.btnCikis.Text = "Çıkış Yap";
-            this.btnCikis.UseVisualStyleBackColor = true;
+            this.btnCikis.UseVisualStyleBackColor = false;
             this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
             // 
             // adminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TarimBank.Properties.Resources.bg4;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1162, 442);
             this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.groupBox2);

@@ -77,11 +77,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tarimBankDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>tarimBankDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="adminForm.resx">
       <DependentUpon>adminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,17 +111,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="tarimBankDataSet.xsc">
-      <DependentUpon>tarimBankDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="tarimBankDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>tarimBankDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="tarimBankDataSet.xss">
-      <DependentUpon>tarimBankDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -137,9 +121,27 @@
     <None Include="Resources\lemon.png" />
     <None Include="Resources\misir.png" />
     <None Include="Resources\login.png" />
-    <Content Include="tarimBank.accdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bg\5104194.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bg\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\para.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bg\bg2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bg\bg3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bg\bg4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
