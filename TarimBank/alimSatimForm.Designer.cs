@@ -40,6 +40,8 @@ namespace TarimBank
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.emirFytTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.alTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -155,6 +157,8 @@ namespace TarimBank
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.emirFytTxt);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.alTxt);
             this.groupBox2.Controls.Add(this.label5);
@@ -169,11 +173,29 @@ namespace TarimBank
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ÜRÜN AL";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Location = new System.Drawing.Point(7, 107);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 17);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Fiyat :";
+            // 
+            // emirFytTxt
+            // 
+            this.emirFytTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.emirFytTxt.Location = new System.Drawing.Point(84, 105);
+            this.emirFytTxt.Name = "emirFytTxt";
+            this.emirFytTxt.Size = new System.Drawing.Size(150, 23);
+            this.emirFytTxt.TabIndex = 8;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(6, 74);
+            this.label6.Location = new System.Drawing.Point(6, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 17);
             this.label6.TabIndex = 7;
@@ -182,7 +204,7 @@ namespace TarimBank
             // alTxt
             // 
             this.alTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.alTxt.Location = new System.Drawing.Point(84, 71);
+            this.alTxt.Location = new System.Drawing.Point(84, 68);
             this.alTxt.Name = "alTxt";
             this.alTxt.Size = new System.Drawing.Size(150, 23);
             this.alTxt.TabIndex = 6;
@@ -192,7 +214,7 @@ namespace TarimBank
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(237, 36);
+            this.label5.Location = new System.Drawing.Point(233, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 17);
             this.label5.TabIndex = 5;
@@ -201,7 +223,7 @@ namespace TarimBank
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(133, 35);
+            this.label4.Location = new System.Drawing.Point(133, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 17);
             this.label4.TabIndex = 4;
@@ -211,7 +233,7 @@ namespace TarimBank
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 31);
+            this.comboBox2.Location = new System.Drawing.Point(6, 30);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 3;
@@ -225,7 +247,7 @@ namespace TarimBank
             this.btnAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAl.ForeColor = System.Drawing.Color.White;
-            this.btnAl.Location = new System.Drawing.Point(163, 100);
+            this.btnAl.Location = new System.Drawing.Point(163, 134);
             this.btnAl.Name = "btnAl";
             this.btnAl.Size = new System.Drawing.Size(71, 33);
             this.btnAl.TabIndex = 2;
@@ -273,5 +295,7 @@ namespace TarimBank
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox alTxt;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox emirFytTxt;
     }
 }

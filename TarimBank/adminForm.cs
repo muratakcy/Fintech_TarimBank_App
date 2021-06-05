@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Xml;
 
 namespace TarimBank
 {
@@ -37,6 +38,18 @@ namespace TarimBank
                     ekle.SubItems.Add(oku["urunMiktar"].ToString());
                     urunListView.Items.Add(ekle);
                 }
+            }
+            baglanti.Close();
+        }
+        //Adminin alım işlemlerinden topladığı komisyonun ekranda gösterilmesini sağlayan fonksiyon.
+        public void komisyonGoster()
+        {
+            OleDbCommand komut = new OleDbCommand("select * from Kullanicilar where kAd='admin'", baglanti);
+            baglanti.Open();
+            OleDbDataReader oku = komut.ExecuteReader();
+            if(oku.Read())
+            {
+                komisyonLabel.Text = Convert.ToDouble(oku["bakiye"])+" TL";
             }
             baglanti.Close();
         }
@@ -116,11 +129,18 @@ namespace TarimBank
 
 
         }
-        //Kullanıcının onaylanan bakiyesi , Tl bakiyesine eklenmektedir.  
+        //Kullanıcının anlık döviz kuruna göre onaylanan bakiyesi , Tl bakiyesine dönüştürülerek mevcut bakiyesine eklenmektedir.  
         public Boolean bakiyeAktar()
         {
+            string bugun = "https://www.tcmb.gov.tr/kurlar/today.xml";
+            var xmldoc = new XmlDocument();
+            xmldoc.Load(bugun);
+            string usd;
+            string eur;
+            string gbp;
             string kAd;
-            double bakiye = 0;
+            double bakiye = 0 ;
+            int kontrol = 1;
             OleDbCommand komut = new OleDbCommand("select * from Onay where islemNo=" + Convert.ToInt32(bkyOnyTxt.Text) + "and urunMiktar=" + 0 + "", baglanti);
             baglanti.Open();
             OleDbDataReader oku = komut.ExecuteReader();
@@ -128,17 +148,37 @@ namespace TarimBank
             {
                 bakiyeIslemNoKontrol = true;
                 kAd = oku["kAd"].ToString();
-                bakiye = Convert.ToDouble(oku["yuklenenBakiye"]);
-                OleDbCommand komut2 = new OleDbCommand("update Kullanicilar set bakiye=bakiye+" + bakiye + " where kAd='" + kAd + "' ", baglanti);
+
+                if (Convert.ToInt32(oku["usd"]) == kontrol)
+                {
+                    usd = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='USD']/BanknoteSelling").InnerXml;
+                    bakiye = Convert.ToDouble(oku["yuklenenBakiye"]) * (Convert.ToDouble(usd) * 1 / 10000);
+                }
+                else if (Convert.ToInt32(oku["eur"]) == kontrol)
+                {
+                    eur = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='EUR']/BanknoteSelling").InnerXml;
+                    bakiye = Convert.ToDouble(oku["yuklenenBakiye"]) * (Convert.ToDouble(eur) * 1 / 10000);
+                }
+                else if (Convert.ToInt32(oku["gbp"]) == kontrol)
+                {
+                    gbp = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='GBP']/BanknoteSelling").InnerXml;
+                    bakiye = Convert.ToDouble(oku["yuklenenBakiye"]) * (Convert.ToDouble(gbp) * 1 / 10000);
+                }
+                else
+                {
+                    bakiye = Convert.ToDouble(oku["yuklenenBakiye"]);
+                }
+                OleDbCommand komut2 = new OleDbCommand("update Kullanicilar set bakiye=bakiye+'" + bakiye + "' where kAd='" + kAd + "' ", baglanti);
                 komut2.ExecuteNonQuery();
             }
-            baglanti.Close();
+            baglanti.Close();  
             return bakiyeIslemNoKontrol;
         }
         private void adminForm_Load(object sender, EventArgs e)
         {
             urunIstekGoster();
             bakiyeIstekGoster();
+            komisyonGoster();
         }
         //Ürün onay butonuna basıldığında gerekli kontroller gerçekleştirilip fonksiyonlar çağırılır.
         private void btnUrnOnay_Click(object sender, EventArgs e)
@@ -195,6 +235,7 @@ namespace TarimBank
                 e.Handled = true;
             }
         }
+
         //Çıkış işlemleri
         private void btnCikis_Click(object sender, EventArgs e)
         {

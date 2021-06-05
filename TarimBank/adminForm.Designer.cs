@@ -47,8 +47,11 @@ namespace TarimBank
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCikis = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.komisyonLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -230,6 +233,27 @@ namespace TarimBank
             this.btnCikis.UseVisualStyleBackColor = false;
             this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::TarimBank.Properties.Resources.para;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 41);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // komisyonLabel
+            // 
+            this.komisyonLabel.AutoSize = true;
+            this.komisyonLabel.BackColor = System.Drawing.Color.Transparent;
+            this.komisyonLabel.Location = new System.Drawing.Point(57, 13);
+            this.komisyonLabel.Name = "komisyonLabel";
+            this.komisyonLabel.Size = new System.Drawing.Size(102, 17);
+            this.komisyonLabel.TabIndex = 13;
+            this.komisyonLabel.Text = "komisyonLabel";
+            // 
             // adminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -237,6 +261,8 @@ namespace TarimBank
             this.BackgroundImage = global::TarimBank.Properties.Resources.bg4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1162, 442);
+            this.Controls.Add(this.komisyonLabel);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -248,7 +274,9 @@ namespace TarimBank
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -272,5 +300,7 @@ namespace TarimBank
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.Button btnCikis;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label komisyonLabel;
     }
 }

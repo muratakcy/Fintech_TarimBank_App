@@ -21,6 +21,7 @@ namespace TarimBank
         public string adTut { get; set; }
         public string kAdTut { get; set; }
         double bakiye = 0;
+        
 
         OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=tarimBank.accdb");
         //urun adları comboboxa eklenir.
@@ -30,6 +31,12 @@ namespace TarimBank
             string[] urunler = { "Çilek", "Limon", "Mısır", "Havuç" };
             comboBox1.Items.AddRange(urunler);
 
+        }
+        public void paraBirimComboDoldur()
+        {
+            paraBirimcombo.Items.Clear();
+            string[] birimlerler = { "TL", "USD", "EUR", "GBP" };
+            paraBirimcombo.Items.AddRange(birimlerler);
         }
         //Kullanıcının ürünleri Listeleniyor.
         public void urunListele()
@@ -52,7 +59,7 @@ namespace TarimBank
 
         }
         //Veri tabanından kullanıcı bakiyesi ve adı verileri çekilerek ekranda gösterilir.
-        public void bakiyeUrunGoster()
+        public void bakiyeGoster()
         {
             OleDbCommand komut = new OleDbCommand("select * from Kullanicilar where kAd='" + kAdTut + "'", baglanti);
             baglanti.Open();
@@ -73,12 +80,31 @@ namespace TarimBank
             komut.ExecuteNonQuery();
             baglanti.Close(); 
         }
-        //Bakiye ekleme talebi sisteme iletiliyor.
+        //Kullanıcının seçtiği para birimine göre akiye ekleme talebi sisteme iletiliyor.
         public void bakiyeEkle()
         {
-            OleDbCommand komut = new OleDbCommand("insert into Onay(kAd,yuklenenBakiye)values('" + kAdTut + "','" + Convert.ToDouble(bakiyeTxt.Text) + "')", baglanti);
+            int kontrol = 1;
+            OleDbCommand komut = new OleDbCommand("insert into Onay(kAd,yuklenenBakiye,try)values('" + kAdTut + "','" + Convert.ToDouble(bakiyeTxt.Text) + "'," + kontrol + ")", baglanti);
+            OleDbCommand komut2 = new OleDbCommand("insert into Onay(kAd,yuklenenBakiye,usd)values('" + kAdTut + "','" + Convert.ToDouble(bakiyeTxt.Text) + "'," + kontrol + ")", baglanti);
+            OleDbCommand komut3 = new OleDbCommand("insert into Onay(kAd,yuklenenBakiye,eur)values('" + kAdTut + "','" + Convert.ToDouble(bakiyeTxt.Text) + "'," + kontrol + ")", baglanti);
+            OleDbCommand komut4 = new OleDbCommand("insert into Onay(kAd,yuklenenBakiye,gbp)values('" + kAdTut + "','" + Convert.ToDouble(bakiyeTxt.Text) + "',"+kontrol+")", baglanti);
             baglanti.Open();
-            komut.ExecuteNonQuery();
+            if (paraBirimcombo.Text=="TL")
+            {
+                komut.ExecuteNonQuery();
+            }
+            else if(paraBirimcombo.Text == "USD")
+            {
+                komut2.ExecuteNonQuery();
+            }
+            else if(paraBirimcombo.Text == "EUR")
+            {
+                komut3.ExecuteNonQuery();
+            }
+            else
+            {
+                komut4.ExecuteNonQuery();
+            }
             baglanti.Close();
            
         }
@@ -100,14 +126,15 @@ namespace TarimBank
         //Bakiye yükleme butonuna basıldığında bakiyeEkle() fonksiyonu çağırılıyor.
         private void bakiyeBtn_Click(object sender, EventArgs e)
         {
-            if(bakiyeTxt.Text == "")
+            if(bakiyeTxt.Text == "" || paraBirimcombo.Text == "Seçiniz")
             {
-                MessageBox.Show("Yüklemek istediğiniz bakiye miktarını girdiğinizden emin olunuz.");
+                MessageBox.Show("Yüklemek istediğiniz bakiye miktarını girdiğinizden ve para birimi seçtiğinizden emin olunuz.");
             }
             else
             {
                 bakiyeEkle();
                 bakiyeTxt.Text = "";
+                paraBirimcombo.Text = "Seçiniz";
                 MessageBox.Show("Bakiye yükleme talebiniz oluşturulmuştur.Bakiyeniz onaylandıktan sonra sisteme eklenecektir.");
             }
             
@@ -126,18 +153,13 @@ namespace TarimBank
         //Form yüklenirken fonksiyonlar çağırılarak gerekli veriler veritabanından alınır.
         private void kullaniciForm_Load(object sender, EventArgs e)
         {
+            paraBirimComboDoldur();
             urunComboDoldur();
             urunListele();
-            bakiyeUrunGoster();
+            bakiyeGoster();
         }
         //Bu buton ile Alım-Satım işlemleri formuna geçilir
-        private void button1_Click(object sender, EventArgs e)
-        {   
-            alimSatimForm alimSatim = new alimSatimForm();
-            alimSatim.bakiyeTut = bakiye;   
-            alimSatim.kAdTut = this.kAdTut;
-            alimSatim.Show();
-        }
+        
         //gerekli textbox kontrolleri yapılmaktadır
         private void urunMktrTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -175,7 +197,17 @@ namespace TarimBank
         private void btnYenile_Click(object sender, EventArgs e)
         { 
             urunListele();
-            bakiyeUrunGoster();
+            bakiyeGoster();
         }
+
+        private void btnAlimSatim_Click(object sender, EventArgs e)
+        {
+            alimSatimForm alimSatim = new alimSatimForm();
+            alimSatim.bakiyeTut = bakiye;
+            alimSatim.kAdTut = this.kAdTut;
+            alimSatim.Show();
+        }
+
+
     }
 }
