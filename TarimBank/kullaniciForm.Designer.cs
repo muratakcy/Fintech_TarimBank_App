@@ -54,6 +54,7 @@ namespace TarimBank
             this.btnCikis = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnYenile = new System.Windows.Forms.Button();
+            this.btnGecmis = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -67,7 +68,7 @@ namespace TarimBank
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(103, 74);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.Text = "Seçiniz";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -108,7 +109,7 @@ namespace TarimBank
             this.urunMktrTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.urunMktrTxt.Location = new System.Drawing.Point(103, 39);
             this.urunMktrTxt.Name = "urunMktrTxt";
-            this.urunMktrTxt.Size = new System.Drawing.Size(121, 20);
+            this.urunMktrTxt.Size = new System.Drawing.Size(121, 23);
             this.urunMktrTxt.TabIndex = 4;
             this.urunMktrTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.urunMktrTxt_KeyPress);
             // 
@@ -118,7 +119,7 @@ namespace TarimBank
             this.mktrLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mktrLabel.Location = new System.Drawing.Point(8, 40);
             this.mktrLabel.Name = "mktrLabel";
-            this.mktrLabel.Size = new System.Drawing.Size(67, 13);
+            this.mktrLabel.Size = new System.Drawing.Size(89, 17);
             this.mktrLabel.TabIndex = 3;
             this.mktrLabel.Text = "Ürün miktar :";
             // 
@@ -139,9 +140,9 @@ namespace TarimBank
             this.bkyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.bkyLabel.Location = new System.Drawing.Point(41, 43);
             this.bkyLabel.Name = "bkyLabel";
-            this.bkyLabel.Size = new System.Drawing.Size(73, 15);
+            this.bkyLabel.Size = new System.Drawing.Size(32, 18);
             this.bkyLabel.TabIndex = 5;
-            this.bkyLabel.Text = "bakiyeLabel";
+            this.bkyLabel.Text = "asd";
             // 
             // groupBox2
             // 
@@ -165,7 +166,7 @@ namespace TarimBank
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(7, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(100, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Para Birimleri :";
             // 
@@ -175,7 +176,7 @@ namespace TarimBank
             this.paraBirimcombo.FormattingEnabled = true;
             this.paraBirimcombo.Location = new System.Drawing.Point(110, 74);
             this.paraBirimcombo.Name = "paraBirimcombo";
-            this.paraBirimcombo.Size = new System.Drawing.Size(121, 21);
+            this.paraBirimcombo.Size = new System.Drawing.Size(121, 24);
             this.paraBirimcombo.TabIndex = 5;
             this.paraBirimcombo.Text = "Seçiniz";
             // 
@@ -200,7 +201,7 @@ namespace TarimBank
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(7, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(100, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bakiye Miktar :";
             // 
@@ -209,7 +210,7 @@ namespace TarimBank
             this.bakiyeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.bakiyeTxt.Location = new System.Drawing.Point(110, 40);
             this.bakiyeTxt.Name = "bakiyeTxt";
-            this.bakiyeTxt.Size = new System.Drawing.Size(121, 20);
+            this.bakiyeTxt.Size = new System.Drawing.Size(121, 23);
             this.bakiyeTxt.TabIndex = 0;
             this.bakiyeTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bakiyeTxt_KeyPress);
             // 
@@ -220,7 +221,7 @@ namespace TarimBank
             this.adLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.adLbl.Location = new System.Drawing.Point(12, 12);
             this.adLbl.Name = "adLbl";
-            this.adLbl.Size = new System.Drawing.Size(0, 15);
+            this.adLbl.Size = new System.Drawing.Size(0, 18);
             this.adLbl.TabIndex = 7;
             // 
             // btnAlimSatim
@@ -293,7 +294,7 @@ namespace TarimBank
             this.btnCikis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCikis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCikis.ForeColor = System.Drawing.Color.White;
-            this.btnCikis.Location = new System.Drawing.Point(470, 426);
+            this.btnCikis.Location = new System.Drawing.Point(470, 464);
             this.btnCikis.Name = "btnCikis";
             this.btnCikis.Size = new System.Drawing.Size(220, 29);
             this.btnCikis.TabIndex = 10;
@@ -326,11 +327,27 @@ namespace TarimBank
             this.btnYenile.UseVisualStyleBackColor = false;
             this.btnYenile.Click += new System.EventHandler(this.btnYenile_Click);
             // 
+            // btnGecmis
+            // 
+            this.btnGecmis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnGecmis.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnGecmis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGecmis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGecmis.ForeColor = System.Drawing.Color.White;
+            this.btnGecmis.Location = new System.Drawing.Point(470, 427);
+            this.btnGecmis.Name = "btnGecmis";
+            this.btnGecmis.Size = new System.Drawing.Size(220, 29);
+            this.btnGecmis.TabIndex = 13;
+            this.btnGecmis.Text = "İşlem Geçmişi";
+            this.btnGecmis.UseVisualStyleBackColor = false;
+            this.btnGecmis.Click += new System.EventHandler(this.btnGecmis_Click);
+            // 
             // kullaniciForm
             // 
             this.BackgroundImage = global::TarimBank.Properties.Resources._5104194;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(875, 515);
+            this.Controls.Add(this.btnGecmis);
             this.Controls.Add(this.btnYenile);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnCikis);
@@ -383,6 +400,7 @@ namespace TarimBank
         private System.Windows.Forms.Button btnCikis;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnYenile;
+        private System.Windows.Forms.Button btnGecmis;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox paraBirimcombo;
     }

@@ -208,6 +208,11 @@ namespace TarimBank
             alimSatim.Show();
         }
 
-
+        private void btnGecmis_Click(object sender, EventArgs e)
+        {
+            gecmisForm gecmis = new gecmisForm();
+            gecmis.kAdTut = this.kAdTut;
+            gecmis.Show();
+        }
     }
 }

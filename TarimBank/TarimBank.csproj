@@ -63,6 +63,12 @@
     <Compile Include="alimSatimForm.Designer.cs">
       <DependentUpon>alimSatimForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="gecmisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gecmisForm.Designer.cs">
+      <DependentUpon>gecmisForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="girisForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="alimSatimForm.resx">
       <DependentUpon>alimSatimForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gecmisForm.resx">
+      <DependentUpon>gecmisForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="girisForm.resx">
       <DependentUpon>girisForm.cs</DependentUpon>
@@ -155,6 +164,15 @@
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
       <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
