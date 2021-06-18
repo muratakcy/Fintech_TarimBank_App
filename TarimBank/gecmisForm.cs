@@ -22,7 +22,7 @@ namespace TarimBank
         }
         OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=tarimBank.accdb");
         public string kAdTut { get; set; }
-        //Seçilen tarih aralıkları ve ürüne göre kullanıcının işlem geçmişini listeleyen fonksiyon
+        //Seçilen tarih aralıkları ve ürüne göre kullanıcının alım işlem geçmişini listeleyen fonksiyon
         public void alimlistele()
         {
             DataTable dt = new DataTable();
@@ -37,6 +37,7 @@ namespace TarimBank
             dataGridView1.DataSource = dt;
             baglanti.Close();
         }
+        //Seçilen tarih aralıkları ve ürüne göre kullanıcının satım işlem geçmişini listeleyen fonksiyon
         public void satimListele()
         {
             DataTable dt = new DataTable();
@@ -63,7 +64,7 @@ namespace TarimBank
             }
             
         }
-        //Form Load olayında bu fonksiyon çaılışır ve ürün isimleri combobox a doldurulur.
+        //Form Load olayında bu fonksiyon çalışır ve ürün isimleri combobox a doldurulur.
         public void urunComboDoldur()
         {
             urunComboBox.Items.Clear();

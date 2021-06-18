@@ -63,6 +63,12 @@
     <Compile Include="alimSatimForm.Designer.cs">
       <DependentUpon>alimSatimForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="emirlerimForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="emirlerimForm.Designer.cs">
+      <DependentUpon>emirlerimForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="gecmisForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="alimSatimForm.resx">
       <DependentUpon>alimSatimForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="emirlerimForm.resx">
+      <DependentUpon>emirlerimForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gecmisForm.resx">
       <DependentUpon>gecmisForm.cs</DependentUpon>

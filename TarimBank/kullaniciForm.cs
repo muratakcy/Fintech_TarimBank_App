@@ -32,6 +32,7 @@ namespace TarimBank
             comboBox1.Items.AddRange(urunler);
 
         }
+        //Para birimleri comboboxa eklenir
         public void paraBirimComboDoldur()
         {
             paraBirimcombo.Items.Clear();
@@ -213,6 +214,13 @@ namespace TarimBank
             gecmisForm gecmis = new gecmisForm();
             gecmis.kAdTut = this.kAdTut;
             gecmis.Show();
+        }
+
+        private void btnEmirlerim_Click(object sender, EventArgs e)
+        {
+            emirlerimForm emirlerim = new emirlerimForm();
+            emirlerim.kAdTut = this.kAdTut;
+            emirlerim.Show();
         }
     }
 }

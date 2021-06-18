@@ -55,6 +55,7 @@ namespace TarimBank
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnYenile = new System.Windows.Forms.Button();
             this.btnGecmis = new System.Windows.Forms.Button();
+            this.btnEmirlerim = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -231,7 +232,7 @@ namespace TarimBank
             this.btnAlimSatim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlimSatim.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAlimSatim.ForeColor = System.Drawing.Color.White;
-            this.btnAlimSatim.Location = new System.Drawing.Point(470, 391);
+            this.btnAlimSatim.Location = new System.Drawing.Point(470, 411);
             this.btnAlimSatim.Name = "btnAlimSatim";
             this.btnAlimSatim.Size = new System.Drawing.Size(220, 29);
             this.btnAlimSatim.TabIndex = 8;
@@ -294,9 +295,9 @@ namespace TarimBank
             this.btnCikis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCikis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCikis.ForeColor = System.Drawing.Color.White;
-            this.btnCikis.Location = new System.Drawing.Point(470, 464);
+            this.btnCikis.Location = new System.Drawing.Point(747, 505);
             this.btnCikis.Name = "btnCikis";
-            this.btnCikis.Size = new System.Drawing.Size(220, 29);
+            this.btnCikis.Size = new System.Drawing.Size(116, 29);
             this.btnCikis.TabIndex = 10;
             this.btnCikis.Text = "Çıkış Yap";
             this.btnCikis.UseVisualStyleBackColor = false;
@@ -334,7 +335,7 @@ namespace TarimBank
             this.btnGecmis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGecmis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGecmis.ForeColor = System.Drawing.Color.White;
-            this.btnGecmis.Location = new System.Drawing.Point(470, 427);
+            this.btnGecmis.Location = new System.Drawing.Point(470, 446);
             this.btnGecmis.Name = "btnGecmis";
             this.btnGecmis.Size = new System.Drawing.Size(220, 29);
             this.btnGecmis.TabIndex = 13;
@@ -342,11 +343,27 @@ namespace TarimBank
             this.btnGecmis.UseVisualStyleBackColor = false;
             this.btnGecmis.Click += new System.EventHandler(this.btnGecmis_Click);
             // 
+            // btnEmirlerim
+            // 
+            this.btnEmirlerim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnEmirlerim.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnEmirlerim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmirlerim.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnEmirlerim.ForeColor = System.Drawing.Color.White;
+            this.btnEmirlerim.Location = new System.Drawing.Point(470, 376);
+            this.btnEmirlerim.Name = "btnEmirlerim";
+            this.btnEmirlerim.Size = new System.Drawing.Size(220, 29);
+            this.btnEmirlerim.TabIndex = 14;
+            this.btnEmirlerim.Text = "Emirlerim";
+            this.btnEmirlerim.UseVisualStyleBackColor = false;
+            this.btnEmirlerim.Click += new System.EventHandler(this.btnEmirlerim_Click);
+            // 
             // kullaniciForm
             // 
             this.BackgroundImage = global::TarimBank.Properties.Resources._5104194;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(875, 515);
+            this.ClientSize = new System.Drawing.Size(875, 546);
+            this.Controls.Add(this.btnEmirlerim);
             this.Controls.Add(this.btnGecmis);
             this.Controls.Add(this.btnYenile);
             this.Controls.Add(this.pictureBox2);
@@ -403,5 +420,6 @@ namespace TarimBank
         private System.Windows.Forms.Button btnGecmis;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox paraBirimcombo;
+        private System.Windows.Forms.Button btnEmirlerim;
     }
 }

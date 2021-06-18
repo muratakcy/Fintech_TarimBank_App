@@ -33,10 +33,6 @@ namespace TarimBank
             this.bslngcDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.bitisDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.urunAd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.satisMiktar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toplamFiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.islemZamani = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urunComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,25 +41,29 @@ namespace TarimBank
             this.btnCiktiAl = new System.Windows.Forms.Button();
             this.alimRadioButton = new System.Windows.Forms.RadioButton();
             this.satimRadioButton = new System.Windows.Forms.RadioButton();
+            this.urunAd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisMiktar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toplamFiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.islemZamani = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // bslngcDateTimePicker
             // 
             this.bslngcDateTimePicker.CustomFormat = "";
-            this.bslngcDateTimePicker.Location = new System.Drawing.Point(146, 29);
-            this.bslngcDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bslngcDateTimePicker.Location = new System.Drawing.Point(195, 36);
+            this.bslngcDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bslngcDateTimePicker.Name = "bslngcDateTimePicker";
-            this.bslngcDateTimePicker.Size = new System.Drawing.Size(167, 20);
+            this.bslngcDateTimePicker.Size = new System.Drawing.Size(221, 22);
             this.bslngcDateTimePicker.TabIndex = 2;
             // 
             // bitisDateTimePicker
             // 
             this.bitisDateTimePicker.CustomFormat = "";
-            this.bitisDateTimePicker.Location = new System.Drawing.Point(146, 67);
-            this.bitisDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bitisDateTimePicker.Location = new System.Drawing.Point(195, 82);
+            this.bitisDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bitisDateTimePicker.Name = "bitisDateTimePicker";
-            this.bitisDateTimePicker.Size = new System.Drawing.Size(167, 20);
+            this.bitisDateTimePicker.Size = new System.Drawing.Size(221, 22);
             this.bitisDateTimePicker.TabIndex = 3;
             // 
             // dataGridView1
@@ -76,13 +76,114 @@ namespace TarimBank
             this.satisMiktar,
             this.toplamFiyat,
             this.islemZamani});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 153);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(21, 188);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(582, 184);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 226);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // urunComboBox
+            // 
+            this.urunComboBox.FormattingEnabled = true;
+            this.urunComboBox.Location = new System.Drawing.Point(661, 33);
+            this.urunComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.urunComboBox.Name = "urunComboBox";
+            this.urunComboBox.Size = new System.Drawing.Size(135, 24);
+            this.urunComboBox.TabIndex = 6;
+            this.urunComboBox.Text = "Seçiniz";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(527, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Ürün Seçiniz :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(19, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Başlangıç Tarihi :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(19, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 17);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Bitiş Tarihi :";
+            // 
+            // btnListele
+            // 
+            this.btnListele.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(190)))), ((int)(((byte)(84)))));
+            this.btnListele.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(190)))), ((int)(((byte)(84)))));
+            this.btnListele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnListele.ForeColor = System.Drawing.Color.White;
+            this.btnListele.Location = new System.Drawing.Point(525, 119);
+            this.btnListele.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnListele.Name = "btnListele";
+            this.btnListele.Size = new System.Drawing.Size(272, 31);
+            this.btnListele.TabIndex = 10;
+            this.btnListele.Text = "Listele";
+            this.btnListele.UseVisualStyleBackColor = false;
+            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
+            // 
+            // btnCiktiAl
+            // 
+            this.btnCiktiAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(190)))), ((int)(((byte)(84)))));
+            this.btnCiktiAl.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(190)))), ((int)(((byte)(84)))));
+            this.btnCiktiAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCiktiAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCiktiAl.ForeColor = System.Drawing.Color.White;
+            this.btnCiktiAl.Location = new System.Drawing.Point(681, 420);
+            this.btnCiktiAl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCiktiAl.Name = "btnCiktiAl";
+            this.btnCiktiAl.Size = new System.Drawing.Size(116, 31);
+            this.btnCiktiAl.TabIndex = 11;
+            this.btnCiktiAl.Text = "Çıktı Al";
+            this.btnCiktiAl.UseVisualStyleBackColor = false;
+            this.btnCiktiAl.Click += new System.EventHandler(this.btnCiktiAl_Click);
+            // 
+            // alimRadioButton
+            // 
+            this.alimRadioButton.AutoSize = true;
+            this.alimRadioButton.BackColor = System.Drawing.Color.Transparent;
+            this.alimRadioButton.Location = new System.Drawing.Point(531, 80);
+            this.alimRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.alimRadioButton.Name = "alimRadioButton";
+            this.alimRadioButton.Size = new System.Drawing.Size(110, 21);
+            this.alimRadioButton.TabIndex = 12;
+            this.alimRadioButton.TabStop = true;
+            this.alimRadioButton.Text = "Alım İşlemleri";
+            this.alimRadioButton.UseVisualStyleBackColor = false;
+            // 
+            // satimRadioButton
+            // 
+            this.satimRadioButton.AutoSize = true;
+            this.satimRadioButton.BackColor = System.Drawing.Color.Transparent;
+            this.satimRadioButton.Location = new System.Drawing.Point(685, 80);
+            this.satimRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.satimRadioButton.Name = "satimRadioButton";
+            this.satimRadioButton.Size = new System.Drawing.Size(115, 21);
+            this.satimRadioButton.TabIndex = 13;
+            this.satimRadioButton.TabStop = true;
+            this.satimRadioButton.Text = "Satış İşlemleri";
+            this.satimRadioButton.UseVisualStyleBackColor = false;
             // 
             // urunAd
             // 
@@ -101,7 +202,7 @@ namespace TarimBank
             // toplamFiyat
             // 
             this.toplamFiyat.DataPropertyName = "toplamFiyat";
-            this.toplamFiyat.HeaderText = "Toplam Fiyat";
+            this.toplamFiyat.HeaderText = "Toplam Fiyat (TL)";
             this.toplamFiyat.MinimumWidth = 6;
             this.toplamFiyat.Name = "toplamFiyat";
             // 
@@ -112,115 +213,13 @@ namespace TarimBank
             this.islemZamani.MinimumWidth = 6;
             this.islemZamani.Name = "islemZamani";
             // 
-            // urunComboBox
-            // 
-            this.urunComboBox.FormattingEnabled = true;
-            this.urunComboBox.Location = new System.Drawing.Point(496, 27);
-            this.urunComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.urunComboBox.Name = "urunComboBox";
-            this.urunComboBox.Size = new System.Drawing.Size(102, 21);
-            this.urunComboBox.TabIndex = 6;
-            this.urunComboBox.Text = "Seçiniz";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(395, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Ürün Seçiniz :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(14, 30);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Başlangıç Tarihi :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(14, 67);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Bitiş Tarihi :";
-            // 
-            // btnListele
-            // 
-            this.btnListele.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(190)))), ((int)(((byte)(84)))));
-            this.btnListele.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(190)))), ((int)(((byte)(84)))));
-            this.btnListele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnListele.ForeColor = System.Drawing.Color.White;
-            this.btnListele.Location = new System.Drawing.Point(394, 97);
-            this.btnListele.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnListele.Name = "btnListele";
-            this.btnListele.Size = new System.Drawing.Size(204, 25);
-            this.btnListele.TabIndex = 10;
-            this.btnListele.Text = "Listele";
-            this.btnListele.UseVisualStyleBackColor = false;
-            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
-            // 
-            // btnCiktiAl
-            // 
-            this.btnCiktiAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(190)))), ((int)(((byte)(84)))));
-            this.btnCiktiAl.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(190)))), ((int)(((byte)(84)))));
-            this.btnCiktiAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCiktiAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCiktiAl.ForeColor = System.Drawing.Color.White;
-            this.btnCiktiAl.Location = new System.Drawing.Point(511, 341);
-            this.btnCiktiAl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnCiktiAl.Name = "btnCiktiAl";
-            this.btnCiktiAl.Size = new System.Drawing.Size(87, 25);
-            this.btnCiktiAl.TabIndex = 11;
-            this.btnCiktiAl.Text = "Çıktı Al";
-            this.btnCiktiAl.UseVisualStyleBackColor = false;
-            this.btnCiktiAl.Click += new System.EventHandler(this.btnCiktiAl_Click);
-            // 
-            // alimRadioButton
-            // 
-            this.alimRadioButton.AutoSize = true;
-            this.alimRadioButton.BackColor = System.Drawing.Color.Transparent;
-            this.alimRadioButton.Location = new System.Drawing.Point(398, 65);
-            this.alimRadioButton.Name = "alimRadioButton";
-            this.alimRadioButton.Size = new System.Drawing.Size(84, 17);
-            this.alimRadioButton.TabIndex = 12;
-            this.alimRadioButton.TabStop = true;
-            this.alimRadioButton.Text = "Alım İşlemleri";
-            this.alimRadioButton.UseVisualStyleBackColor = false;
-            // 
-            // satimRadioButton
-            // 
-            this.satimRadioButton.AutoSize = true;
-            this.satimRadioButton.BackColor = System.Drawing.Color.Transparent;
-            this.satimRadioButton.Location = new System.Drawing.Point(514, 65);
-            this.satimRadioButton.Name = "satimRadioButton";
-            this.satimRadioButton.Size = new System.Drawing.Size(88, 17);
-            this.satimRadioButton.TabIndex = 13;
-            this.satimRadioButton.TabStop = true;
-            this.satimRadioButton.Text = "Satış İşlemleri";
-            this.satimRadioButton.UseVisualStyleBackColor = false;
-            // 
             // gecmisForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TarimBank.Properties.Resources.bg4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(614, 435);
+            this.ClientSize = new System.Drawing.Size(819, 535);
             this.Controls.Add(this.satimRadioButton);
             this.Controls.Add(this.alimRadioButton);
             this.Controls.Add(this.btnCiktiAl);
@@ -233,7 +232,7 @@ namespace TarimBank
             this.Controls.Add(this.bitisDateTimePicker);
             this.Controls.Add(this.bslngcDateTimePicker);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "gecmisForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Geçmiş";
@@ -254,11 +253,11 @@ namespace TarimBank
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnListele;
         private System.Windows.Forms.Button btnCiktiAl;
+        private System.Windows.Forms.RadioButton alimRadioButton;
+        private System.Windows.Forms.RadioButton satimRadioButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn urunAd;
         private System.Windows.Forms.DataGridViewTextBoxColumn satisMiktar;
         private System.Windows.Forms.DataGridViewTextBoxColumn toplamFiyat;
         private System.Windows.Forms.DataGridViewTextBoxColumn islemZamani;
-        private System.Windows.Forms.RadioButton alimRadioButton;
-        private System.Windows.Forms.RadioButton satimRadioButton;
     }
 }

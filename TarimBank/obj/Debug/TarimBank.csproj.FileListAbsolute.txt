@@ -46,3 +46,4 @@ C:\Users\murat\Desktop\TarimBank\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\murat\Desktop\TarimBank\bin\Debug\itextsharp.dll
 C:\Users\murat\Desktop\TarimBank\bin\Debug\itextsharp.xml
 C:\Users\murat\Desktop\TarimBank\obj\Debug\TarimBank.csproj.CopyComplete
+C:\Users\murat\Desktop\TarimBank\obj\Debug\TarimBank.emirlerimForm.resources
